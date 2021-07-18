@@ -4,7 +4,7 @@ title: IIS-Default-Page-to-Information-Disclosure
 date: 2021-07-17 18:54 +0600
 image: "/images/iis.jpg"
 permalink: /IIS-Default-Page-to-Information-Disclosure/
-tags: iis
+tags: IIS Fuzzing Information-Disclosure
 featured: false
 ---
 
