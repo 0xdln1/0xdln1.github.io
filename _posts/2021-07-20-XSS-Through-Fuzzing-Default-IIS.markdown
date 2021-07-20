@@ -20,6 +20,8 @@ featured: false
 
 * As mentioned in the previous blogpost i ran IIS Shortname scanners but this webserver is not vulnerable
 
+### Fuzzing
+
 * I decided to do general content discovery with ffuf
     
 * So i ran ffuf with jhaddix content_discovery_all.txt
@@ -41,6 +43,8 @@ featured: false
 </code></pre></div></div>
 
 * I tried default credentials manually but none of them Worked
+
+### XSS
 
 * After spending sometime i obeserver the path is being reflected in the source code without sanitisation 
 <div class="language-bash"><div class="highlight"><pre class="highlight"><code>http://sub.redacted.com/beta/default.aspx/%27%3E%3C/script%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E </code></pre></div></div>
