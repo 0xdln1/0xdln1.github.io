@@ -5,7 +5,7 @@ date: 2021-07-27 12:35 +0600
 image: "/images/XSS-Special.jpg"
 permalink: /XSS-Special-Cases/
 tags: Reflected-XSS
-featured: true
+featured: false
 ---
 
 <p>Hello World, while Doing Bug Bounty Hunting i came accross some Special XSS Cases. In this blog Post i will write about them.</p>
