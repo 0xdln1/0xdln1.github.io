@@ -8,20 +8,19 @@ tags: Reflected-XSS
 featured: true
 ---
 
-<p>Hello World, While Doing Bug Bounty Hunting i came accross some Special XSS Cases. If you know any other special cases, please share them i would love to know and i will include them in this blogpost and give u credits.</p>
+<p>Hello World, while Doing Bug Bounty Hunting i came accross some Special XSS Cases. In this blog Post i will write about them.</p>
 
 ### 1) XSS That Works only in mobile Devices
 
 Recently i was hunting on a program and testing parameters for XSS and that website has a strong waf since it is a banking related website
 
-All tags are blocked and mostly all event handlers are blocked, i tried bypassing the waf and was about to give up.
+* All tags are blocked and mostly all event handlers are blocked, i tried bypassing the waf and was about to give up.
 
-I noticed normal strings like FUZZ are beign reflected but whenever i use it with an event handler in the payload, i am getting blocked by the waf.
+* I noticed normal strings like FUZZ are beign reflected but whenever i use it with an event handler in the payload, i am getting blocked by the waf.
 
 * So i tried all eventhandlers from [Portswigger Cheatsheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet) and only below event handlers gave a response of 200 OK
 
-<div class="language-text"><div class="highlight"><pre class="highlight"><code>
-touchstart
+<div class="language-text"><div class="highlight"><pre class="highlight"><code>touchstart
 touchmove
 touchcancel
 touchend
@@ -29,8 +28,7 @@ touchend
 
 Using them in the payload like this didn't pop any alert, after googling about these eventhandlers a bit, i understood that these event handlers only work with mobile devices.
 
-<div class="language-text"><div class="highlight"><pre class="highlight"><code>
-https://REDACTED.COM/SOMEPATH/Amount?UNIQUE_TICKET_ID=XXXXXXX&LANG=EN&name=0%22ontouchend%3Dalert(document.cookie)%20
+<div class="language-text"><div class="highlight"><pre class="highlight"><code>https://REDACTED.COM/SOMEPATH/Amount?UNIQUE_TICKET_ID=XXXXXXX&LANG=EN&name=0%22ontouchend%3Dalert(document.cookie)%20
 </code></pre></div></div>
 
 The developers blocked all event handlers but not mobile event handlers.
