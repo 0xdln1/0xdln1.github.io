@@ -22,8 +22,7 @@ I used vim sometimes and i know that vim has a great power. After watching tomno
 
 * I Downloaded the vimrc file https://github.com/tomnomnom/dotfiles/blob/master/.vimrc into your ~/.vimrc
 
-<div class="language-bash"><div class="highlight"><pre class="highlight"><code>
-mkdir -p ~/.vim/bundle
+<div class="language-bash"><div class="highlight"><pre class="highlight"><code>mkdir -p ~/.vim/bundle
 cd ~/.vim/bundle
 git clone https://github.com/VundleVim/Vundle.vim.git
 git clone https://github.com/tpope/vim-fugitive.git
@@ -36,10 +35,10 @@ git clone https://github.com/preservim/nerdtree.git
 git clone https://bitbucket.org/TomNomNom/xoria256.vim
 git clone https://github.com/fatih/vim-go.git
 git clone https://github.com/rust-lang/rust.vim.git
-</code></div></div>
+</code></pre></div></div>
 
 * I installed the above plugins which tomnomnom uses ( go and rust plugins ar optoinal sue it if you code in those languages )
 
 * Finished setting up and now my vim looks like this :)
 
-<img src="../images/vimfinal.jpg">
+<img src="/images/vimfinal.jpg">
