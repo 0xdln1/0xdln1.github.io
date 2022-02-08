@@ -5,12 +5,12 @@ date: 2022-02-08 13:25 +0600
 image: "/images/vim.png"
 permalink: /Setting-Up-VIM/
 tags: VIM
-featured: true
+featured: flase
 ---
 
 <p>
 
-I came across this video <a href="https://www.youtube.com/watch?v=SYExiynPEKM">https://www.youtube.com/watch?v=SYExiynPEKM</a>  where tomnomnom is doing recon on shopify along with nahamsec.
+I came across this video <a href="https://www.youtube.com/watch?v=SYExiynPEKM">https://www.youtube.com/watch?v=SYExiynPEKM</a>  where tomnomnom is doing recon on shopify with nahamsec.
 </p>
 
 <p>
@@ -23,7 +23,7 @@ I used vim sometimes and i know that vim has a great power. After watching tomno
 
 <h2> Setting up vim </h2>
 
-* I Downloaded the vimrc file https://github.com/tomnomnom/dotfiles/blob/master/.vimrc into your ~/.vimrc
+* I Downloaded the vimrc file <a href="https://github.com/tomnomnom/dotfiles/blob/master/.vimrc">https://github.com/tomnomnom/dotfiles/blob/master/.vimrc</a> into your ~/.vimrc
 
 <div class="language-bash"><div class="highlight"><pre class="highlight"><code>mkdir -p ~/.vim/bundle
 cd ~/.vim/bundle
