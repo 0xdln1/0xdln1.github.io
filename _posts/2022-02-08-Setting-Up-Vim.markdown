@@ -41,4 +41,4 @@ git clone https://github.com/rust-lang/rust.vim.git
 
 * Finished setting up and now my vim looks like this :)
 
-<img src="/images/vimfinal.jpg">
+![vimfinal](/images/vimfinal.png)
