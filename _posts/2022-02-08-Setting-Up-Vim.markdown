@@ -11,9 +11,12 @@ featured: true
 <p>
 
 I came across this video <a href="https://www.youtube.com/watch?v=SYExiynPEKM">https://www.youtube.com/watch?v=SYExiynPEKM</a>  where tomnomnom is doing recon on shopify along with nahamsec.
+</p>
 
+<p>
 I am using nano for a long time and as a person who spends long time on terminal i wanted to make the experience of writing code and editing files etc better for myself.
-
+</p>
+<p>
 I used vim sometimes and i know that vim has a great power. After watching tomnomnom vim terminal look, i wanted to setup like that.
 
 </p>
