@@ -2,7 +2,7 @@
 layout: post
 title: Fanatastic-pg-Walkthrough
 date: 2022-12-13 18:54 +0600
-image: "/images/fantastic.png"
+image: "/images/walkthrough.jpg"
 permalink: /Fanatastic-pg-Walkthrough
 tags: Proving Grounds,Fanatastic,Walkthrough,
 featured: true
