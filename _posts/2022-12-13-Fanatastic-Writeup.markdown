@@ -58,9 +58,7 @@ Read file > /etc/grafana/grafana.ini
 
 After checking the configuration file there are credentials for the admin.
 
-<code style="background:black">
-;admin_user = admin
-# default admin password, can be changed before first start of grafana, or in profile settings
+<code style="background:black">;admin_user = admin
 ;admin_password = admin
 </code>
 
