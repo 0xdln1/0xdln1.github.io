@@ -39,6 +39,8 @@ We discussed this with the team and upgraded the severity rating to high
 
 ![severity-discussion](/images/mdos/mdos-seeverity-discussion.png)
 
+![report](/images/mdos/mdos-report.png)
+
 ### Exploitation
 
 * Step 1 : Post a toot1 with contents of payload1 and the server will respond with Gateway Timeout error.  
