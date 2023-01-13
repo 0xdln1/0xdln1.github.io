@@ -51,6 +51,4 @@ We discussed this with the team and upgraded the severity rating to high
 
 Keep an eye out for more updates on our discoveries and let us know if you have any thoughts or questions.
 
-Follow us on twitter
-
-[@0xdln](https://twitter.com/0xdln) , [@0xrj](https://twitter.com/JagadeshRonanki)
+Follow us on twitter [@0xdln](https://twitter.com/0xdln) , [@0xrj](https://twitter.com/JagadeshRonanki)
