@@ -53,5 +53,4 @@ Keep an eye out for more updates on our discoveries and let us know if you have 
 
 Follow us on twitter
 
-(@0xdln)[https://twitter.com/0xdln]
-(@0xrj)[https://twitter.com/JagadeshRonanki]
+[@0xdln](https://twitter.com/0xdln) , [@0xrj][https://twitter.com/JagadeshRonanki]
