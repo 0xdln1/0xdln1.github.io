@@ -8,7 +8,7 @@ tags: DOS bugbounty
 featured: true
 ---
 
-Hey everyone!  It's 0xdln here! So, me and my friend @0xrj were poking around the Mastodon public program on intigriti and we stumbled upon some pretty interesting vulnerabilities that we thought you might find interesting. From bypassing link length restrictions to causing server crashes, it was a wild ride. 
+Hey everyone!  It's [@0xdln](https://twitter.com/0xdln) here! So, me and my friend [@0xrj](https://twitter.com/JagadeshRonanki) were poking around the Mastodon public program on intigriti and we stumbled upon some pretty interesting vulnerabilities that we thought you might find interesting. From bypassing link length restrictions to causing server crashes, it was a wild ride. 
 
 ### Description
 
