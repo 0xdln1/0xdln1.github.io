@@ -23,8 +23,7 @@ As usual we tried attempting to bypass various restrictions imposed on the polls
 Now, It’s time to inspect for the request and response and we observed that when a user votes in a poll, the request is sent in the following format:
 
 
-<div class="language-json"><div class="highlight"><pre class="highlight"><code>
-POST /api/v1/polls/262/votes HTTP/1.1
+<div class="language-json"><div class="highlight"><pre class="highlight"><code>POST /api/v1/polls/262/votes HTTP/1.1
 Host: xxxxxxx.mastodon.social
 Accept: application/json, text/plain, */*
 .
@@ -39,8 +38,7 @@ We then tried to manipulate the request by sending an empty array of choices and
 
 This vulnerability also allows an attacker to vote multiple times if no choice is selected, giving the attacker the ability to flood the poll with fake votes and bring the voting result to 0 for all options.
 
-<div class="language-json"><div class="highlight"><pre class="highlight"><code>
-POST /api/v1/polls/262/votes HTTP/1.1
+<div class="language-json"><div class="highlight"><pre class="highlight"><code>POST /api/v1/polls/262/votes HTTP/1.1
 Host: xxxxxxx.mastodon.social
 Accept: application/json, text/plain, */*
 .
