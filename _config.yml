@@ -3,8 +3,8 @@
 # General Site Settings
 title: 0xdln
 logo: /images/logo.svg # You can add own logo. For example '/images/logo.png'.
-tagline: CyberSecurity Enthusiast
-description: Computer Science Student and a CyberSec Enthusiast.
+tagline: CyberSec Enthusiast
+description: CyberSec Enthusiast.
 baseurl: "/" # The subpath of your site, e.g. /blog
 url: "http://0xdln1.github.io" # The base hostname & protocol for your site, e.g. http://example.com
 
@@ -18,14 +18,14 @@ author:
 # Hero Settings
 hero:
   title: 0xdln
-  description: Computer Science Student and a CyberSec Enthusiast
+  description: CyberSec Enthusiast
   image: "/images/cover.jpg"
 
 #-------------------------------
 # Contact Settings
 contact:
   email: 0xdlnbb@gmail.com # Add your email for contact form
-  description: Hey! We're glad you stopped by, if you need to get in touch with me for any reason, just fill out the form below 
+  description: Hey! I am glad you stopped by, if you need to get in touch with me for any reason, just fill out the form below 
 
 # NOTE
 # Aditu theme comes with a contact form built-in. You can use this form with Formspree service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
@@ -47,12 +47,12 @@ disqus-identifier:  # Add your shortname for Disqus Comment. For example mr-brow
 # google-analytics: GTM-T654QLL # Add your identifier. For example UA-99631805-1.
 google:
   tag_manager:
-    container_id: GTM-T654QLL
+    container_id: 
 
 #-------------------------------
 # Newsletter
 mailchimp: true # To enable the mailchimp form, use the value true. To turn off use the value false.
-mailchimp-identifier: blockequity.us7.list-manage.com/subscribe/post?u=a89c1803c6cd4103e90b4340c&amp;id=d2bcba6e8a # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
+mailchimp-identifier:  # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
 
 #-------------------------------
 # Build settings
@@ -88,5 +88,5 @@ sass:
 
 # Twitter Schema
 twitter:
-  username: 0xdln1
+  username: 0xdln
   card: summary
