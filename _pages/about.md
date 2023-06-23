@@ -9,12 +9,13 @@ seo:
 
 <p> Hi, I am 0xdln. I like doing various things related to hacking. I do part-time bug bounty hunting, and I enjoy conducting research regarding web security and automating bugs</p>
 
+## Experience
 
 <div class="timeline-body bg-themed" style="">
     
       <div style="background-color:#2F1E3B;border-radius:10px;padding:15px;margin:10px">
         <div class="content">
-          <h2>Bug Bounty Hunter</h2>
+          <h2>Bug Bounty Hunter - Intigriti</h2>
           <h6 class="date">Jan 2021 — Present</h6>
           <p>Submitted 400+ vulnerabilities to 100+ companies in intigriti. Achieved Top 3 in 2023 Q1 leaderboard</p>
           <a href="https://intigriti.com/profile/0xdln">Visit Profile</a>
@@ -86,6 +87,7 @@ seo:
 <span class="p">}</span>
 </code></pre></div></div>
 !-->
+
 
 ## Projects
 
