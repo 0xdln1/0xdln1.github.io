@@ -7,7 +7,7 @@ seo:
   - type: Organization
 ---
 
-<p> Hi, I am 0xdln. I like doing various things related to hacking. I do part-time bug bounty hunting, and I enjoy conducting research regarding web security and automating bugs</p>
+<p> Hi, I am 0xdln. I like doing various things related to hacking. I do full-time bug bounty hunting, and I enjoy conducting research regarding web security and automating bugs</p>
 
 ## Experience
 
